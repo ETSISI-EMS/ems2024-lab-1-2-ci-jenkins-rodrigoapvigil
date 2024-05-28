@@ -19,7 +19,7 @@ public class HelloControllerTest {
     public void holaOk() throws Exception {
         ResponseEntity<String> response = template.getForEntity("/hola", String.class);
         
-        // check that the body contains a <p> tag with the text "¡Hola Mundo!"
+        // check that the body contains a <p> tag with the text "¡Hola Mundo! "
         assertThat(response.getBody()).contains("<p>¡Hola Mundo!</p>");
     }
 
@@ -28,6 +28,6 @@ public class HelloControllerTest {
         ResponseEntity<String> response = template.getForEntity("/hola?nombre=EMSAlumno ", String.class);
 
         // check that the body contains a <p> tag with the text "¡Hola EMSAlumno!"
-        assertThat(response.getBody()).contains("<p>¡Hola EMSAlumno ERROR!</p>");
+        assertThat(response.getBody()).contains("<p>¡Hola EMSAlumno !</p>");
     }
 }
